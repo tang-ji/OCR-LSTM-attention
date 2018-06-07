@@ -3,6 +3,9 @@
 A multi-digit-letter recognition based on Attention OCR, run under Python 2.7 .
 Pakages required: numpy, tensorflow==1.2.0, pillow, scikit-image, opencv2, six
 
+<img src="/picture/1.png" width="400" height="200" /> <img src="/picture/3.png" width="400" height="200" />
+<img src="/picture/2.png" width="400" height="200" /> <img src="/picture/4.png" width="400" height="200" />
+
 Put every image in the folder "train" end with "_ABC.jpg", which has a label "ABC"
 
     python data.py
