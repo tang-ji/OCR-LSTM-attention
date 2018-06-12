@@ -153,8 +153,11 @@ for testFile in test_image_files:
         img = cv2.imread(imagePath + 'saved/' + testFile.split('_')[-1].split('/')[-1])
         for i in range(100):
             M = cv2.getRotationMatrix2D((cols/2,rows/2),15 * (random.random()-0.5),1)
-            img = cv2.warpAffine(img,M,(cols,rows))
-            Image.fromarray(np.asarray(img)).save(imagePath + 'rotated/' + str(int(1000*random.random())) + '_' + testFile.split('_')[-1].split('/')[-1])
+            try:
+                img = cv2.warpAffine(img,M,(cols,rows))
+                Image.fromarray(np.asarray(img)).save(imagePath + 'rotated/' + str(int(1000*random.random())) + '_' + testFile.split('_')[-1].split('/')[-1])
+            except cv2.error:
+                continue
 
         rotated_image_files = []
         f = []
